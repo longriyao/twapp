@@ -1,0 +1,116 @@
+<html>
+{% load staticfiles %}
+<head>
+    <!-- Begin Inspectlet Embed Code -->
+<script type="text/javascript" id="inspectletjs">
+window.__insp = window.__insp || [];
+__insp.push(['wid', 1483138466]);
+(function() {
+function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
+})();
+</script>
+<!-- End Inspectlet Embed Code -->
+    <!--  Facebook start Code -->
+    <script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '1663628633946653');
+ fbq('track', 'ViewContent');
+fbq('track', 'Purchase', {value: '998.00', currency:'USD'});
+</script>
+<noscript>
+ <img height="1" width="1"
+src="https://www.facebook.com/tr?id=1663628633946653&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+<!-- google Pixel Code -->
+    <title>下單完成</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="content-type" content="text/html">
+    <link rel="stylesheet" href="{% static '/css/success.css' %}">
+</head>
+
+<body>
+    <div class="m-hd">
+        <div class="m-topBar">
+            <a class="goback" href="/"></a>
+            <div style="width: 100%;">
+                <div class="title">訂單詳情</div>
+            </div>
+        </div>
+    </div>
+    <div class="m-orderItem">
+        <div class="row-1">
+            <div>
+                <span class="tips_orderid">訂單時間 :&nbsp;&nbsp;&nbsp;</span>2017-03-28 14:35:55
+            </div>
+            <div>
+                <span class="tips_orderid">訂單編號 :&nbsp;&nbsp;&nbsp;</span>8170328024008320
+            </div>
+        </div>
+        <div class="row-2">
+            <div class="goodImg f-fl">
+
+                <img src="{% static colorurl %}" width="100%" height="100%">
+            </div>
+            <div class="goodInfo f-fl">
+                <div class="goodName">{{ num }}</div>
+                <div class="goodNum">{{ color }} </div>
+                <div class="goodName">NT${{ money }}
+{#                    <span class="old_price">NT$1996</span>#}
+                </div>
+            </div>
+            <div class="goodStatus f-fr">
+                <div>
+                    <span>x</span>
+                    <span>{{ num }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="timetips">服務時間 : 09:00 - 22:00</div>
+    <div class="w-tips">
+        <a href="http://api.pop800.com/chat/271701?l=ct&t=0" target="view_window" onclick="P8.startGroupChat(271701)"  class="w-button w-button-block btn-comment kefu">
+            <i class="u-icon u-icon-detail-kefu"></i>在線客服
+        </a>
+    </div>
+    <div class="m-orderItem">
+        <div class="row-1">
+            <div>{{ address }}</div>
+        </div>
+        <div class="row-2">
+            <div>
+                <span class="tips">付款方式:  </span>貨到付款</div>
+            <div>
+                <span class="tips">商品合計:  </span>NT${{ money }}</div>
+            <div>
+                <span class="tips">運費:  </span>NT$0.00</div>
+        </div>
+        <div class="row-2 red">
+            <span class="tipred">實付:  </span> NT${{ money }}
+        </div>
+    </div>
+
+    <!-- global function -->
+    <script type="text/javascript">
+    $(function() {
+        if ($(".edui-upload-video").length > 0) {
+            $(".edui-upload-video").attr("poster", "/public/image/videoPlay.jpg");
+            $(".edui-upload-video").click(function() {
+                $(this).get(0).play();
+            });
+        }
+    });
+    </script>
+</body>
+
+</html>

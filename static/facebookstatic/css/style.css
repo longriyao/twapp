@@ -1,0 +1,420 @@
+body, html {
+	min-width: 320px;
+	max-width: 750px;
+	height: 100%;
+	margin: 0 auto;
+	background: #eaebef;
+}
+.index {
+	width: 100%;
+	background: #eaebef;
+}
+.head-scroll {
+	position: relative;
+	width: 100%;
+	height: 1.87rem;
+	padding-top: 0.38rem;
+	background: #395899;
+	color: #fff;
+	line-height: 1.55rem;
+	font-size: 0.65rem;
+}
+.head-scroll .h-scroll-box {
+	overflow: hidden;
+	width: 83.93%;
+	height: 1.55rem;
+	padding: 0 6%;
+	margin: 0 auto;
+	border-radius: 1rem;
+	background: #607fc0;
+}
+.head-scroll .h-scr-title {
+	position: absolute;
+	top: 0.6rem;
+	left: 3.51%;
+	width: 17.07%;
+	height: 1rem;
+	background: #607fc0;
+	line-height: 1.2rem;
+	text-align: center;
+	z-index: 9999;
+}
+.banner, .banner img {
+	width: 100%;
+	height: 16.27rem;
+}
+.caption {
+	position: relative;
+	width: 92%;
+	min-height: 3.92rem;
+	padding: 0.75rem 4% 0;
+	background: #fff;
+}
+.caption div h1 {
+	float: left;
+	margin-right: 2%;
+	color: #515159;
+	font-size: 0.95rem;
+}
+.caption div span {
+	float: left;
+	border-radius: 1rem;
+	padding: 0.05rem 1%;
+	margin: 0.3rem 0.5% 0;
+	color: #fff;
+	font-size: 0.42rem;
+}
+.caption div strong {
+	position: relative;
+	float: right;
+	color: #37589f;
+	font-size: 0.82rem;
+}
+.caption div strong b {
+	position: absolute;
+	top: 1.13rem;
+	right: 0;
+	color: #c2c2c2;
+	font-size: 0.53rem;
+	text-decoration: line-through;
+}
+.caption div:nth-child(1) {
+	float: left;
+	width: 100%;
+	height: auto;
+	margin-bottom: 1rem;
+}
+.caption div:nth-child(2) {
+	float: left;
+	width: 100%;
+	height: 1.7rem;
+}
+.caption div:nth-child(2) em {
+	position: relative;
+	float: left;
+	width: 33.3%;
+	height: 1.7rem;
+	color: #525156;
+	line-height: 1.2rem;
+	font-size: 0.6rem;
+	text-indent: 13%;
+}
+.caption div:nth-child(2) em img {
+	position: absolute;
+	top: 0.1rem;
+	left: 12%;
+	width: 16%;
+}
+.caption div:nth-child(2) em:nth-child(1) img {
+	position: absolute;
+	top: 0.2rem;
+	left: 12%;
+	width: 18%;
+}
+.caption div:nth-child(2) em:nth-child(3) img {
+	top: 0.21rem;
+}
+.calculation {
+	width: 92%;
+	height: 2rem;
+	margin: 0.75rem 0;
+	padding: 0.75rem 4% 0;
+	background: #fff;
+}
+.calculation div {
+	height: 1.5rem;
+	padding: 0 5%;
+	border-radius: 1rem;
+	background: #f4f3f8;
+	font-size: 0.6rem;
+	line-height: 1.5rem;
+	text-align: center;
+}
+.calculation div span {
+	float: right;
+}
+.calculation div:nth-child(1) {
+	float: left;
+}
+.calculation div:nth-child(2) {
+	float: right;
+}
+.standard {
+	width: 92%;
+	height: 1.65rem;
+	margin: 0.75rem 0 0;
+	padding: 0.75rem 4% 0;
+	background: #fff;
+	font-size: 0.75rem;
+}
+.standard a {
+	float: right;
+	width: 100%;
+	background: url("../images/r_right.png") no-repeat 100% 0;
+	background-size: 5% 100%;
+	color: #515159;
+}
+.details h1,
+.use-notice h1,
+.latest-purchase h1,
+.quantity h1,
+.receipt h1 {
+	width: 100%;
+	height: 1.6rem;
+	padding-top: 0.6rem;
+	margin-bottom: 0.75rem;
+	background: #eaebef;
+	color: #525156;
+	font-size: 0.75rem;
+	text-align: center;
+}
+.use-notice h1 {
+	padding-top: 0rem;
+	margin-bottom: 0rem;
+}
+.quantity h1, .latest-purchase h1 {
+	margin-bottom: 0rem;
+}
+.d-img-box {
+	width: 100%;
+	background: #eaebef;
+}
+.d-img-box img {
+	width: 100%;
+	height: 18rem;
+	margin-bottom: 0.75rem;
+}
+.use-notice,
+.latest-purchase,
+.quantity {
+	background: #eaebef;
+}
+.use-notice div {
+	width: 88%;
+	padding: 1rem 0 0.5rem;
+	margin: 0 auto;
+	border-radius: 0.5rem;
+	background: #fff;
+}
+.use-notice div p {
+	width: 90%;
+	margin: 0 auto 0.25rem;
+	line-height: 0.9rem;
+	font-size: 0.6rem;
+}
+.latest-purchase {
+	margin-bottom: 3rem;
+}
+.latest-purchase .txtMarquee-top {
+	overflow: hidden;
+	width: 88%;
+	height: 7rem;
+	padding: 1rem 0 0.5rem;
+	margin: 0 auto;
+	border-radius: 0.5rem;
+	background: #fff;
+}
+.latest-purchase .txtMarquee-top li {
+	width: 90%;
+	height: 2rem;
+	margin: 0 auto 0.25rem;
+	line-height: 1rem;
+	font-size: 0.6rem;
+}
+.tempWrap {
+	overflow: hidden;
+	height:5rem;
+}
+.quantity-box {
+	width: 84%;
+	margin: 0 auto 3rem;
+	padding: 0.5rem 2%;
+	border-radius: 0.5rem;
+	/*background: #fff;*/
+}
+.quantity-box h3 {
+	height: 1.3rem;
+	color: #989898;
+	font-size: 0.65rem;
+}
+.q-radius-color {
+	width: 100%;
+	margin-bottom: 0.5rem;
+	border-bottom: 1px dashed #e3e3e3;
+}
+.quantity-box .q-radius-color span {
+	overflow: hidden;
+	float: left;
+	height: 1.5rem;
+	margin: 0 5% 0.6rem 0;
+	padding: 0.1rem 5%;
+	border-radius: 0.2rem;
+	border: 1px solid #333;
+	line-height: 1.5rem;
+	font-size: 0.8rem;
+	text-align: center;
+}
+.quantity-box .q-radius-color .r-show {
+	border: 1px solid #3b5997;
+	background: url("../images/selectB.png") no-repeat 100% 105%;
+	background-size: 32% 60%;
+	color: #3b5997;
+}
+.q-size-color {
+	width: 100%;
+	height: 4.8rem;
+	margin-bottom: 0.5rem;
+	border-bottom: 1px dashed #e3e3e3;
+}
+.q-size-color span {
+	display: block;
+	width: 100%;
+	height: 1.55rem;
+	margin-bottom: 0.6rem;
+	border: 1px solid #000;
+	border-radius: 0.2rem;
+	color: #000;
+	font-size: 0.6rem;
+	line-height: 1.55rem;
+	text-align: center;
+}
+.q-size-color .s-show {
+	border: 1px solid #3b5997;
+	background: url("../images/selectB.png") no-repeat 100% 100%;
+	background-size: 7% 65%;
+	/*background: #3b5997;*/
+	color: #3b5997;
+}
+.q-number p {
+	display: block;
+	width: 100%;
+	height: 1.8rem;
+}
+.q-number p em {
+	float: left;
+	width: 10%;
+	height: 1.5rem;
+	border: 1px solid #000;
+	border-radius: 50%;
+	font-size: 0.5rem;
+	line-height: 1.5rem;
+	text-align: center;
+}
+.q-number p strong {
+	float: left;
+	width: 8%;
+	height: 1.5rem;
+	font-size: 0.5rem;
+	line-height: 1.6rem;
+	text-align: center;
+	font-weight: bold;
+}
+.receipt {
+	background: #eaebef;
+}
+.receipt-box {
+	width: 84%;
+	margin: 0 auto 2.83rem;
+	padding: 0.5rem 2%;
+	border-radius: 0.5rem;
+	background: #fff;
+}
+.receipt-box label {
+	overflow: hidden;
+	display: block;
+	width: 100%;
+	height: 2.2rem;
+	border-bottom: 1px solid #e7e7e7;
+	line-height: 2.2rem;
+	font-size: 0.7rem;
+}
+.receipt-box label span {
+	float: left;
+}
+.receipt-box label em {
+	line-height: 2.5rem;
+}
+.receipt-box label input {
+	float: left;
+	width: 70%;
+	height: 2.1rem;
+	margin-left: 12%;
+}
+.receipt-box label select {
+	width: 45%;
+	margin-left: 3.5%;
+}
+.receipt-box label input[type=radio] {
+	width: 5%;
+	margin-left: 5%;
+}
+.receipt textarea {
+	width: 100%;
+	height: 4.4rem;
+	margin-top: 0.8rem;
+	border: 1px solid #e7e7e7;
+	border-radius: 0.5rem;
+	color: #9b9b9b;
+	font-size: 0.7rem;
+}
+.quantity {
+	display: none;
+}
+.footer {
+	position: fixed;
+	bottom: 0;
+	min-width: 320px;
+	max-width: 750px;
+	width: 100%;
+	height: 2.4rem;
+	border-bottom: 1px solid #000;
+	background: #395899;
+	line-height: 2.4rem;
+	font-size: 0.85rem;
+	text-align: center;
+}
+.footer a {
+	display: block;
+	color: #fff;
+}
+
+.quantity h2, .receipt h2 {
+	width: 100%;
+	height: 2.5rem;
+	background: #fff url("../images/r_left.png") no-repeat 5%;
+	background-size: 4% 45%;
+	border-bottom: 1px solid #E0E0E0;
+	line-height: 2.5rem;
+	font-size: 0.95rem;
+	text-align: center;
+}
+.quantity-inf, .quantity-inf dl {
+	overflow: hidden;
+	width: 100%;
+	height: 7.8rem;
+	background: #fff;
+}
+.quantity-inf {
+	border-bottom: 1px solid #E0E0E0;
+}
+.quantity-inf dl dt {
+	float: left;
+	width: 31.5%;
+	height: 5.6rem;
+	margin: 0.8rem 0 0.8rem 5%;
+}
+.quantity-inf dl dt img {
+	width: 100%;
+	height: 6rem;
+}
+.quantity-inf dl dd {
+	float: right;
+	width: 60%;
+	height: 5rem;
+	margin-top: 0.9rem;
+}
+.quantity-inf dl dd p {
+	width: 100%;
+	height: 1.6rem;
+	font-size: 0.95rem;
+}

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+
+<head>
+	<meta charset="UTF-8">
+	<title>{{ projectname }}</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="{% static '/facebookstatic/css/reset.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static '/facebookstatic/css/swiper-3.2.7.min.css' %}">
+	<style>
+		body, html {
+			min-width: 320px;
+			max-width: 750px;
+			height: 100%;
+			margin: 0 auto;
+		}
+		.index {
+			width: 100%;
+			background: #eaebef;
+		}
+		.head-scroll {
+			position: relative;
+			width: 100%;
+			height: 1.87rem;
+			padding-top: 0.38rem;
+			background: #395899;
+			color: #fff;
+			line-height: 1.55rem;
+			font-size: 0.65rem;
+		}
+		.head-scroll .h-scroll-box {
+			overflow: hidden;
+			width: 83.93%;
+			height: 1.55rem;
+			padding: 0 6%;
+			margin: 0 auto;
+			border-radius: 1rem;
+			background: #607fc0;
+		}
+		.head-scroll .h-scr-title {
+			position: absolute;
+			top: 0.6rem;
+			left: 3.51%;
+			width: 17.07%;
+			height: 1rem;
+			background: #607fc0;
+			line-height: 1.2rem;
+			text-align: center;
+			z-index: 9999;
+		}
+		.banner, .banner img {
+			width: 100%;
+			height: 16.27rem;
+		}
+		.caption {
+			position: relative;
+			width: 92%;
+			min-height: 3.92rem;
+			padding: 0.75rem 4% 0;
+			background: #fff;
+		}
+		.caption div h1 {
+			float: left;
+			margin-right: 2%;
+			color: #515159;
+			font-size: 0.95rem;
+		}
+		.caption div span {
+			float: left;
+			border-radius: 1rem;
+			padding: 0.05rem 1%;
+			margin: 0.3rem 0.5% 0;
+			color: #fff;
+			font-size: 0.42rem;
+		}
+		.caption div strong {
+			position: relative;
+			float: right;
+			color: #37589f;
+			font-size: 0.82rem;
+		}
+		.caption div strong b {
+			position: absolute;
+			top: 1.13rem;
+			right: 0;
+			color: #c2c2c2;
+			font-size: 0.53rem;
+			text-decoration: line-through;
+		}
+		.caption div:nth-child(1) {
+			float: left;
+			width: 100%;
+			height: auto;
+			margin-bottom: 1rem;
+		}
+		.caption div:nth-child(2) {
+			float: left;
+			width: 100%;
+			height: 1.7rem;
+		}
+		.caption div:nth-child(2) em {
+			position: relative;
+			float: left;
+			width: 33.3%;
+			height: 1.7rem;
+			color: #525156;
+			line-height: 1.2rem;
+			font-size: 0.6rem;
+			text-indent: 13%;
+		}
+		.caption div:nth-child(2) em img {
+			position: absolute;
+			top: 0.1rem;
+			left: 12%;
+			width: 16%;
+		}
+		.caption div:nth-child(2) em:nth-child(1) img {
+			position: absolute;
+			top: 0.2rem;
+			left: 12%;
+			width: 18%;
+		}
+		.caption div:nth-child(2) em:nth-child(3) img {
+			top: 0.21rem;
+		}
+		.calculation {
+			width: 92%;
+			height: 2rem;
+			margin: 0.75rem 0;
+			padding: 0.75rem 4% 0;
+			background: #fff;
+		}
+		.calculation div {
+			height: 1.5rem;
+			padding: 0 5%;
+			border-radius: 1rem;
+			background: #f4f3f8;
+			font-size: 0.6rem;
+			line-height: 1.5rem;
+			text-align: center;
+		}
+		.calculation div span {
+			float: right;
+		}
+		.calculation div:nth-child(1) {
+			float: left;
+		}
+		.calculation div:nth-child(2) {
+			float: right;
+		}
+		.standard {
+			width: 92%;
+			height: 1.65rem;
+			margin: 0.75rem 0 0;
+			padding: 0.75rem 4% 0;
+			background: #fff;
+			font-size: 0.75rem;
+		}
+		.standard a {
+			float: right;
+			width: 100%;
+			background: url("{% static '/facebookstatic/images/r_right.png' %}") no-repeat 100% 0;
+			background-size: 5% 100%;
+			color: #515159;
+		}
+		.details h1,
+		.use-notice h1,
+		.latest-purchase h1,
+		.quantity h1,
+		.receipt h1 {
+			width: 100%;
+			height: 1.6rem;
+			padding-top: 0.6rem;
+			margin-bottom: 0.75rem;
+			background: #eaebef;
+			color: #525156;
+			font-size: 0.75rem;
+			text-align: center;
+		}
+		.use-notice h1 {
+			padding-top: 0rem;
+			margin-bottom: 0rem;
+		}
+		.quantity h1, .latest-purchase h1 {
+			margin-bottom: 0rem;
+		}
+		.d-img-box {
+			width: 100%;
+			background: #eaebef;
+		}
+		.d-img-box img {
+			width: 100%;
+			height: 18rem;
+			margin-bottom: 0.75rem;
+		}
+		/*.d-img-box img:nth-child(even) {
+			float: right;
+		}
+		.d-img-box img:nth-child(odd) {
+			float: left;
+		}*/
+		.use-notice,
+		.latest-purchase,
+		.quantity {
+			background: #eaebef;
+		}
+		.use-notice div {
+			width: 88%;
+			padding: 1rem 0 0.5rem;
+			margin: 0 auto;
+			border-radius: 0.5rem;
+			background: #fff;
+		}
+		.use-notice div p {
+			width: 90%;
+			margin: 0 auto 0.25rem;
+			line-height: 0.9rem;
+			font-size: 0.6rem;
+		}
+		.latest-purchase .txtMarquee-top {
+			overflow: hidden;
+			width: 88%;
+			height: 7rem;
+			padding: 1rem 0 0.5rem;
+			margin: 0 auto;
+			border-radius: 0.5rem;
+			background: #fff;
+		}
+		.latest-purchase .txtMarquee-top li {
+			width: 90%;
+			height: 2rem;
+			margin: 0 auto 0.25rem;
+			line-height: 1rem;
+			font-size: 0.6rem;
+		}
+		.tempWrap {
+			overflow: hidden;
+			height:5rem;
+		}
+		.quantity-box {
+			width: 84%;
+			margin: 0 auto;
+			padding: 0.5rem 2%;
+			border-radius: 0.5rem;
+			background: #fff;
+		}
+		.quantity-box h3 {
+			height: 1.3rem;
+			color: #989898;
+			font-size: 0.65rem;
+		}
+		.q-radius-color {
+			width: 100%;
+			height: 2rem;
+			margin-bottom: 0.5rem;
+			border-bottom: 1px dashed #e3e3e3;
+		}
+		.quantity-box .q-radius-color span {
+			overflow: hidden;
+			float: left;
+			width: 8.5%;
+			height: 1.25rem;
+			margin-right: 3%;
+			border-radius: 50%;
+			border: 3px solid #fff;
+			text-indent: 9999px;
+		}
+		.quantity-box .q-radius-color .r-show {
+			border: 3px solid #ccc;
+		}
+		.q-size-color {
+			width: 100%;
+			height: 4.8rem;
+			margin-bottom: 0.5rem;
+			border-bottom: 1px dashed #e3e3e3;
+		}
+		.q-size-color span {
+			display: block;
+			width: 60%;
+			height: 1.55rem;
+			margin-bottom: 0.6rem;
+			border: 1px solid #000;
+			border-radius: 1rem;
+			color: #000;
+			font-size: 0.6rem;
+			line-height: 1.55rem;
+			text-align: center;
+		}
+		.q-size-color .s-show {
+			border: 1px solid #3b5997;
+			background: #3b5997;
+			color: #fff;
+		}
+		.q-number p {
+			display: block;
+			width: 100%;
+			height: 1.8rem;
+		}
+		.q-number p em {
+			float: left;
+			width: 8%;
+			height: 1.25rem;
+			border: 1px solid #000;
+			border-radius: 50%;
+			font-size: 0.5rem;
+			line-height: 1.15rem;
+			text-align: center;
+		}
+		.q-number p strong {
+			float: left;
+			width: 8%;
+			height: 1.25rem;
+			font-size: 0.5rem;
+			line-height: 1.4rem;
+			text-align: center;
+		}
+		.receipt {
+			background: #eaebef;
+		}
+		.receipt-box {
+			width: 84%;
+			margin: 0 auto 2.83rem;
+			padding: 0.5rem 2%;
+			border-radius: 0.5rem;
+			background: #fff;
+		}
+		.receipt-box label {
+			overflow: hidden;
+			display: block;
+			width: 100%;
+			height: 2.2rem;
+			border-bottom: 1px solid #e7e7e7;
+			line-height: 2.2rem;
+			font-size: 0.7rem;
+		}
+		.receipt-box label span {
+			float: left;
+		}
+		.receipt-box label em {
+			line-height: 2.5rem;
+		}
+		.receipt-box label input {
+			float: left;
+			width: 70%;
+			height: 2.1rem;
+			margin-left: 12%;
+		}
+		.receipt-box label select {
+			width: 45%;
+			margin-left: 3.5%;
+		}
+		.receipt-box label input[type=radio] {
+			width: 5%;
+			margin-left: 5%;
+		}
+		.receipt textarea {
+			width: 100%;
+			height: 4.4rem;
+			margin-top: 0.8rem;
+			border: 1px solid #e7e7e7;
+			border-radius: 0.5rem;
+			color: #9b9b9b;
+			font-size: 0.7rem;
+		}
+		.footer {
+			position: fixed;
+			bottom: 0;
+			min-width: 320px;
+			max-width: 750px;
+			width: 100%;
+			height: 2.4rem;
+			border-bottom: 1px solid #000;
+			background: #395899;
+			line-height: 2.4rem;
+			font-size: 0.85rem;
+			text-align: center;
+		}
+		.footer a {
+			display: block;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="index clearfix">
+
+		<!-- 顶部轮播 -->
+		<div class="head-scroll">
+			<span class="h-scr-title">最新购买</span>
+			<div class="h-scroll-box">
+				<div class="bd">
+				<ul class="infoList">
+					<li>杨** (938***4444) 在1分钟前订购了优质真牛皮美少女专属lv挎包一个</li>
+					<li>赵** (938***5555) 在1分钟前订购了优质真牛皮美少女专属lv挎包一个</li>
+					<li>洪** (938***6666) 在1分钟前订购了优质真牛皮美少女专属lv挎包一个</li>
+				</ul>
+			</div>
+			</div>
+		</div>
+
+		<!-- 商品宣传图 -->
+		<div class="banner">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+{% for key in projectimage %}
+<td><img class="swiper-slide" src="{{ key }}" alt="图片加载失败" title="宣传图片"></td>
+{% endfor %}
+			</div>
+		</div>
+				</div>
+
+		<!-- 商品说明 -->
+		<div class="caption">
+			<div>
+				<h1>{{ projectname }}</h1>
+				<span style="background: #c1000a;">促销</span>
+				<span style="background: #f8b533;">特价</span>
+				<strong>NT${{ projectPrice }}<b>NT$1288</b></strong>
+			</div>
+			<div>
+				<em><img src="{% static '/facebookstatic/images/icon_01.png' %}">免邮费</em>
+				<em><img src="{% static '/facebookstatic/images/icon_02.png' %}">货到付款</em>
+				<em><img src="{% static '/facebookstatic/images/icon_03.png' %}">7天退换货</em>
+			</div>
+		</div>
+
+		<!-- 抢购数量&时间 -->
+		<div class="calculation">
+			<div>已抢购<span>4535</span></div>
+			<div>限时抢购<span>07:34:56</span></div>
+		</div>
+		
+		<!-- 规格链接 -->
+		<div class="standard">
+			
+			<a href="#quantity">请选择规格数量</a>
+		</div>
+
+		<!-- 图文详情 -->
+		<div class="details">
+			<h1>—— 图文详情 ——</h1>
+			<div class="d-img-box clearfix">
+                {% autoescape off %}
+                {{ projectDescribe }}
+                {% endautoescape %}
+				<img src="{% static '/facebookstatic/images/banner_bg.jpg' %}" title="宣传图片">
+				<img src="{% static '/facebookstatic/images/banner_bg.jpg' %}" title="宣传图片">
+				<img src="{% static '/facebookstatic/images/banner_bg.jpg' %}" title="宣传图片">
+				<img src="{% static '/facebookstatic/images/banner_01.jpg' %}" title="宣传图片">
+		<!-- 测试数据 -->
+
+<h1>测试数据</h1>
+{% for book in skoJson %}
+{% for key,value in book.items %}
+    <td>{{ key }}</td>
+    <td><{{ value }}</td>
+{% endfor %}
+{% endfor %}
+    <h1>测试数据</h1>
+        <!-- 测试数据 -->
+
+			</div>
+		</div>
+
+		<!-- 用户须知 -->
+		<div class="use-notice">
+			<h1>—— 用户须知 ——</h1>
+			<div>
+				<p>下划线指商品专柜价、吊牌价、正品零售价等并非原价仅供参考。</p>
+				<p>下划线指商品专柜价吊牌价正品零售价等并非原价下划线指商品专柜价吊牌价正品零售价等并非原价。</p>
+			</div>
+		</div>
+
+		<!-- 最新购买 -->
+		<div class="latest-purchase">
+			<h1>—— 最新购买 ——</h1>
+			<div class="txtMarquee-top">
+				<div class="bd">
+					<ul class="infoList">
+						<li>杨** (938***4444) 在1分钟前订购了优质真牛皮美少女专属lv挎包一个</li>
+						<li>杨** (938***4444) 在1分钟前订购了优质真牛皮美少女专属lv挎包一个</li>
+						<li>杨** (938***4444) 在1分钟前订购了优质真牛皮美少女专属lv挎包一个</li>
+						<li>杨** (938***4444) 在1分钟前订购了优质真牛皮美少女专属lv挎包一个</li>
+						<li>杨** (938***4444) 在1分钟前订购了优质真牛皮美少女专属lv挎包一个</li>
+						<li>杨** (938***4444) 在1分钟前订购了优质真牛皮美少女专属lv挎包一个</li>
+						<li>杨** (938***4444) 在1分钟前订购了优质真牛皮美少女专属lv挎包一个</li>
+						<li>杨** (938***4444) 在1分钟前订购了优质真牛皮美少女专属lv挎包一个</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- 规格数量 -->
+		<div class="quantity" id="quantity">
+			<h1>—— 规格数量 ——</h1>
+			<div class="quantity-box">
+				<div>
+					<h3>颜色</h3>
+					<div class="q-radius-color">
+						<span class="r-show" style="background: blue;">blue</span>
+						<span style="background: pink;">pink</span>
+						<span style="background: yellow;">yellow</span>
+						<span style="background: khaki;">khaki</span>
+                        <span style="background: brown;">brown</span>
+                        <span style="background: DarkOrchid;">DarkOrchid</span>
+
+					</div>
+				</div>
+				<div>
+					<h3>尺寸</h3>
+					<div class="q-size-color">
+						<span class="s-show">小号20cm X 8cm x 16xm</span>
+						<span>大号25cm X 10cm x 20xm</span>
+					</div>
+				</div>
+				<div>
+					<h3>数量</h3>
+					<div class="q-number">
+						<p>
+							<em class="minus">-</em>
+							<strong class="q-num">1</strong>
+							<em class="add">+</em>
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- 收货信息 -->
+		<div class="receipt" id="receipt">
+			<h1>—— 收货信息 ——</h1>
+			<div class="receipt-box">
+				<form action="/projectapp/babyid/" method="post">
+					<label for="">
+						<span>*姓名</span>
+						<input class="name" type="text" placeholder="请输入您的姓名" maxlength="8">
+					</label>
+					<label for="">
+						<span>*手机</span>
+						<input class="mobile" type="text" placeholder="请输入您的手机号码" maxlength="11">
+					</label>
+					<label for="">
+						<span>*邮箱</span>
+						<input class="mailbox" type="text" placeholder="请输入常用邮箱地址" maxlength="22">
+					</label>
+					<label for="" style="height:4.4rem;">
+						<span>*详细地址</span>
+						<select name="" id="">
+							<option value="台湾">台湾</option>
+						</select>
+						<input class="address" type="text" placeholder="请输入详细地址" style="    margin-left: 23%;" maxlength="22">
+					</label>
+					<label for="">
+						<span>*付款方式</span>
+						<input type="radio" checked value="货到付款">
+						<em>货到付款</em>
+					</label>
+					<textarea rows="3" cols="20">请在这里留言</textarea>
+				</form>
+			</div>
+		</div>
+		
+		<!-- 立即购买 -->
+		<div class="footer">
+			<a class="get" href="#receipt">立即购买 NT$<span>{{ projectPrice }}</span></a>
+		</div>
+	</div>
+	<script src="{% static '/facebookstatic/js/zepto.js' %}"></script>
+	<script src="{% static '/facebookstatic/js/common.js' %}"></script>
+	<script src="{% static '/facebookstatic/js/jquery-2.1.4.min.js' %}"></script>
+	<script type="text/javascript" src="{% static '/facebookstatic/js/jquery.SuperSlide.2.1.1.js' %}"></script>
+	<script type="text/javascript" src="{% static '/facebookstatic/js/swiper.min.js' %}"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+
+		var swiper = new Swiper('.swiper-container', {
+			loop : true,
+			pagination: '.swiper-pagination',
+			nextButton: '.swiper-button-next',
+			prevButton: '.swiper-button-prev',
+			slidesPerView: 'auto',
+			autoplay: 5000
+		});
+
+		// 顶部轮播
+		jQuery(".h-scroll-box").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis:2,interTime:50});
+
+		// 中间轮播
+		jQuery(".txtMarquee-top").slide({mainCell:".bd ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});
+
+		// 颜色选择
+		$(".q-radius-color span").click(function (){
+			$(this).addClass("r-show").siblings().removeClass('r-show');
+		})
+
+		// 尺寸选择
+		$(".q-size-color span").click(function (){
+			$(this).addClass("s-show").siblings().removeClass('s-show');
+		})
+
+		// 产品数量-1 & +1
+		var numChange = $(".q-num").html();
+		$(".minus").click(function (){
+			if (numChange == 1) {
+				numChange == 1
+			} else {
+				numChange --
+				$(".q-num").html(numChange);
+				$(".footer span").html(numChange * 1288);
+			}
+		})
+		$(".add").click(function (){
+			numChange ++
+			$(".q-num").html(numChange);
+			$(".footer span").html(numChange * 1288);
+		})
+
+		// 留言聚焦清空
+		$("textarea").focus(function (){
+			$(this).html('')
+		})
+
+		// 购买表单验证
+		var numC = 0;
+		$(".get").click(function (){
+			var selectColor = $(".r-show").html();
+			var selectSize= $(".s-show").html();
+			var qNum = $(".q-num").html();
+			var name = $(".name").val();
+			var mobile = $(".mobile").val();
+			var mailbox = $(".mailbox").val();
+			var address = $(".address").val();
+			var textarea $("textarea").html();
+
+			numC++ 
+			if (numC >= 2) {
+				if (name == "") {
+					setTimeout(function () {
+						alert("姓名不能为空");
+					  }, 500);
+					return
+				}
+				if (mobile == "") {
+					alert("手机号码不能为空");
+					return
+				}
+				if (mailbox == "") {
+					alert("邮箱不能为空");
+					return
+				}
+				if (address == "") {
+					alert("详细地址不能为空");
+					return
+				}
+				if (name !== "" && mobile !== "" && mailbox !== "" && address !== "") {
+					
+					// 测试
+					console.log("颜色：" + selectColor);
+					console.log("型号：" + selectSize);
+					console.log("数量：" + qNum);
+					console.log("姓名：" + name);
+					console.log("手机号码：" + mobile);
+					console.log("邮箱：" + mailbox);
+					console.log("详细地址：" + address);
+					console.log("textarea:" + textarea);
+					
+
+					// ajax下单数据发送后台
+					$.ajax({
+						url: 'xxxx',
+						type: 'post',
+						dataType: 'json',
+						data: 'selectColor=' + selectColor + '&selectSize=' + selectSize + '&qNum=' + qNum + '&name=' + name + '&mobile=' + mobile + '&mailbox=' + mailbox + '&address=' + address,
+						success: function(data) {
+							if (data.msg == 0) {
+								alert('下单成功!');
+							} else {
+								alert('下单失败，请重试!');
+							}
+						}
+					});
+				}
+			}
+
+		})
+
+	});
+	</script>
+</body>
+</html>

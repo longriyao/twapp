@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>购物平台</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper-3.2.7.min.css">
+</head>
+<body>
+	<div class="index clearfix">
+
+		<!-- 第三步 收货信息 -->
+		<div class="receipt" id="receipt">
+			<h2>确认信息</h2>
+			<div class="quantity-inf">
+				<dl>
+					<dt>
+						<img class="changeImg" src="images/banner_01.jpg">
+					</dt>
+					<dd>
+						<p>產品名稱：<span>爆款女包</span></p>
+						<p>color：<span class="colorObt">blue</span></p>
+						<p>NT$ <span class="moneyObt">1288</span></p>
+						<p>数量：<span class="numObt">1</span></p>
+					</dd>
+				</dl>
+			</div>
+			<h1>—— 收货信息 ——</h1>
+			<div class="receipt-box">
+				<form action="">
+					<label for="">
+						<span>*姓名</span>
+						<input class="name" type="text" placeholder="请输入您的姓名" maxlength="8">
+					</label>
+					<label for="">
+						<span>*手机</span>
+						<input class="mobile" type="text" placeholder="请输入您的手机号码" maxlength="11">
+					</label>
+					<label for="">
+						<span>*邮箱</span>
+						<input class="mailbox" type="text" placeholder="请输入常用邮箱地址" maxlength="22">
+					</label>
+					<label for="" style="height:4.4rem;">
+						<span>*详细地址</span>
+						<select name="" id="">
+							<option value="台湾">台湾</option>
+						</select>
+						<input class="address" type="text" placeholder="请输入详细地址" style="    margin-left: 23%;" maxlength="22">
+					</label>
+					<label for="">
+						<span>*付款方式</span>
+						<input type="radio" checked value="货到付款">
+						<em>货到付款</em>
+					</label>
+					<textarea rows="3" cols="20">请在这里留言</textarea>
+				</form>
+			</div>
+		</div>
+		
+		<!-- 立即购买 -->
+		<div class="footer">
+			<a class="get"><em>商品合计 NT$</em><span>1288</span></a>
+		</div>
+	</div>
+	<script src="js/zepto.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
+</body>
+</html>
